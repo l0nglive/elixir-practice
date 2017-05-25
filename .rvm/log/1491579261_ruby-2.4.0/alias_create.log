@@ -1,0 +1,46 @@
+[2017-04-08 01:34:21] alias_create_execute
+alias_create_execute () 
+{ 
+    for _path in "$rvm_rubies_path" "$rvm_environments_path" "$rvm_wrappers_path";
+    do
+        if [[ -L "$_path/$alias_name" ]]; then
+            \command \rm -fv "$_path/$alias_name" || return $?;
+        fi;
+        \command \ln -fs "$_path/$rvm_ruby_string" "$_path/$alias_name" || return $?;
+    done;
+    __rvm_db_ "$rvm_path/config/alias" "$alias_name" "$rvm_ruby_string"
+}
+current path: /home/l0nglive
+GEM_HOME=/home/l0nglive/.rvm/gems/ruby-2.4.0
+PATH=/home/l0nglive/.rvm/gems/ruby-2.4.0/bin:/home/l0nglive/.rvm/gems/ruby-2.4.0@global/bin:/home/l0nglive/.rvm/rubies/ruby-2.4.0/bin:/home/l0nglive/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+GEM_PATH=/home/l0nglive/.rvm/gems/ruby-2.4.0:/home/l0nglive/.rvm/gems/ruby-2.4.0@global
+command(1): alias_create_execute
++ for _path in '"$rvm_rubies_path"' '"$rvm_environments_path"' '"$rvm_wrappers_path"'
++ [[ -L /home/l0nglive/.rvm/rubies/default ]]
++ command ln -fs /home/l0nglive/.rvm/rubies/ruby-2.4.0 /home/l0nglive/.rvm/rubies/default
++ ln -fs /home/l0nglive/.rvm/rubies/ruby-2.4.0 /home/l0nglive/.rvm/rubies/default
++ for _path in '"$rvm_rubies_path"' '"$rvm_environments_path"' '"$rvm_wrappers_path"'
++ [[ -L /home/l0nglive/.rvm/environments/default ]]
++ command ln -fs /home/l0nglive/.rvm/environments/ruby-2.4.0 /home/l0nglive/.rvm/environments/default
++ ln -fs /home/l0nglive/.rvm/environments/ruby-2.4.0 /home/l0nglive/.rvm/environments/default
++ for _path in '"$rvm_rubies_path"' '"$rvm_environments_path"' '"$rvm_wrappers_path"'
++ [[ -L /home/l0nglive/.rvm/wrappers/default ]]
++ command ln -fs /home/l0nglive/.rvm/wrappers/ruby-2.4.0 /home/l0nglive/.rvm/wrappers/default
++ ln -fs /home/l0nglive/.rvm/wrappers/ruby-2.4.0 /home/l0nglive/.rvm/wrappers/default
++ __rvm_db_ /home/l0nglive/.rvm/config/alias default ruby-2.4.0
++ typeset __db __key __value
++ __db=/home/l0nglive/.rvm/config/alias
++ __key=default
++ shift 2
++ __value=ruby-2.4.0
++ case "${__value}" in
++ __rvm_db_add /home/l0nglive/.rvm/config/alias default ruby-2.4.0
++ typeset __dir=/home/l0nglive/.rvm/config
++ [[ -f /home/l0nglive/.rvm/config/alias ]]
++ __rvm_db_remove /home/l0nglive/.rvm/config/alias default
++ [[ -f /home/l0nglive/.rvm/config/alias ]]
++ __rvm_sed -e '\#^default=# d' -e '/^$/d' /home/l0nglive/.rvm/config/alias
++ sed -e '\#^default=# d' -e '/^$/d' /home/l0nglive/.rvm/config/alias
++ command mv -f /home/l0nglive/.rvm/config/alias.new /home/l0nglive/.rvm/config/alias
++ mv -f /home/l0nglive/.rvm/config/alias.new /home/l0nglive/.rvm/config/alias
++ printf '%b=%b\n' default ruby-2.4.0

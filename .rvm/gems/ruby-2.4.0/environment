@@ -1,0 +1,8 @@
+export PATH="/home/l0nglive/.rvm/gems/ruby-2.4.0/bin:/home/l0nglive/.rvm/gems/ruby-2.4.0@global/bin:/home/l0nglive/.rvm/rubies/ruby-2.4.0/bin:$PATH"
+export GEM_HOME='/home/l0nglive/.rvm/gems/ruby-2.4.0'
+export GEM_PATH='/home/l0nglive/.rvm/gems/ruby-2.4.0:/home/l0nglive/.rvm/gems/ruby-2.4.0@global'
+export MY_RUBY_HOME='/home/l0nglive/.rvm/rubies/ruby-2.4.0'
+export IRBRC='/home/l0nglive/.rvm/rubies/ruby-2.4.0/.irbrc'
+unset MAGLEV_HOME
+unset RBXOPT
+export RUBY_VERSION='ruby-2.4.0'
